@@ -1,6 +1,13 @@
 # NorthenLightHospital_LA_JC
 
-
+Cour de Developpement dans un environement graphique 2.
+Professeur:
+Amine Fahmi
+Projet de fin de Session 4.
+Élèves travaillant sur le projet:
+Arar Lion
+Couturier Jean
+NLH est un projet de software administratif pour la gestion d'admission dans un hopital fictif.
 
 ## Getting started
 
