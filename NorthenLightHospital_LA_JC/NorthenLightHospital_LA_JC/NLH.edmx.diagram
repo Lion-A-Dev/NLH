@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a80bc476f2749a39454e783582cfa4b" Name="Diagram1">
+        <EntityTypeShape EntityType="NLHModel.Admission" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Assurance" Width="1.5" PointX="10.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Departement" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Lit" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Medecin" Width="1.5" PointX="7.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Patient" Width="1.5" PointX="7.875" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.TypeLit" Width="1.5" PointX="2.875" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="NLHModel.FK__Admission__IDMed__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="NLHModel.FK__Admission__NSS__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="NLHModel.FK__Admission__Numer__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="NLHModel.FK__Patient__IDAssur__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="NLHModel.FK__Lit__IDDeparteme__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="NLHModel.FK__Lit__IDType__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

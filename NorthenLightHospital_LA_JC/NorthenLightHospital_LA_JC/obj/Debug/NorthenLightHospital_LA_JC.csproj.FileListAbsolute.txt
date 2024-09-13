@@ -1,0 +1,15 @@
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.csproj.AssemblyReference.cache
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmConnexion.g.cs
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\App.g.cs
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC_MarkupCompile.cache
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC_MarkupCompile.lref
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\NorthenLightHospital_LA_JC.exe.config
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\NorthenLightHospital_LA_JC.exe
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\NorthenLightHospital_LA_JC.pdb
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmConnexion.baml
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.g.resources
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.Properties.Resources.resources
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.csproj.GenerateResource.cache
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.csproj.CoreCompileInputs.cache
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.exe
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.pdb
