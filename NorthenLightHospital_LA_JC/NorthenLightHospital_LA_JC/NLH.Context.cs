@@ -31,6 +31,10 @@ namespace NorthenLightHospital_LA_JC
         public virtual DbSet<Lit> Lit { get; set; }
         public virtual DbSet<Medecin> Medecin { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
+
         public virtual DbSet<TypeLit> TypeLit { get; set; }
+
+       
     }
+
 }

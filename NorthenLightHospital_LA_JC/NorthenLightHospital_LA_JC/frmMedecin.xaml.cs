@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static NorthenLightHospital_LA_JC.frmConnexion;
 
 namespace NorthenLightHospital_LA_JC
 {
@@ -19,9 +20,12 @@ namespace NorthenLightHospital_LA_JC
     /// </summary>
     public partial class frmMedecin : Window
     {
-        public frmMedecin()
+        Utilisateur medecin;
+        public frmMedecin(Utilisateur docteur)
         {
             InitializeComponent();
+            medecin = docteur;
         }
+
     }
 }
