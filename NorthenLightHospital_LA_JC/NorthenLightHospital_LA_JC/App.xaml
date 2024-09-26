@@ -2,7 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:NorthenLightHospital_LA_JC"
-             StartupUri="frmConnexion.xaml">
+             StartupUri="frmAdmin.xaml">
+             <!--uncomment tp start the app with frmConnexion-->
+             <!--StartupUri="frmConnexion.xaml">-->
     <Application.Resources>
          
     </Application.Resources>

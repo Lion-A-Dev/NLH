@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NLHModelStoreContainer" CdmEntityContainer="NLH_Entities">
+    <EntitySetMapping Name="Admission">
+      <EntityTypeMapping TypeName="NLHModel.Admission">
+        <MappingFragment StoreEntitySet="Admission">
+          <ScalarProperty Name="IDAdmission" ColumnName="IDAdmission" />
+          <ScalarProperty Name="ChirurgieProgramme" ColumnName="ChirurgieProgramme" />
+          <ScalarProperty Name="DateAdmission" ColumnName="DateAdmission" />
+          <ScalarProperty Name="DateChirurgie" ColumnName="DateChirurgie" />
+          <ScalarProperty Name="DateDuConge" ColumnName="DateDuConge" />
+          <ScalarProperty Name="Televiseur" ColumnName="Televiseur" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="NSS" ColumnName="NSS" />
+          <ScalarProperty Name="NumeroLit" ColumnName="NumeroLit" />
+          <ScalarProperty Name="IDMedecin" ColumnName="IDMedecin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assurance">
+      <EntityTypeMapping TypeName="NLHModel.Assurance">
+        <MappingFragment StoreEntitySet="Assurance">
+          <ScalarProperty Name="IDAssurance" ColumnName="IDAssurance" />
+          <ScalarProperty Name="NomCompagnie" ColumnName="NomCompagnie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departement">
+      <EntityTypeMapping TypeName="NLHModel.Departement">
+        <MappingFragment StoreEntitySet="Departement">
+          <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+          <ScalarProperty Name="NomDepartement" ColumnName="NomDepartement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lit">
+      <EntityTypeMapping TypeName="NLHModel.Lit">
+        <MappingFragment StoreEntitySet="Lit">
+          <ScalarProperty Name="NumeroLit" ColumnName="NumeroLit" />
+          <ScalarProperty Name="Occupe" ColumnName="Occupe" />
+          <ScalarProperty Name="IDType" ColumnName="IDType" />
+          <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medecin">
+      <EntityTypeMapping TypeName="NLHModel.Medecin">
+        <MappingFragment StoreEntitySet="Medecin">
+          <ScalarProperty Name="IDMedecin" ColumnName="IDMedecin" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient">
+      <EntityTypeMapping TypeName="NLHModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="NSS" ColumnName="NSS" />
+          <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="IDAssurance" ColumnName="IDAssurance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeLit">
+      <EntityTypeMapping TypeName="NLHModel.TypeLit">
+        <MappingFragment StoreEntitySet="TypeLit">
+          <ScalarProperty Name="IDType" ColumnName="IDType" />
+          <ScalarProperty Name="LitDesc" ColumnName="LitDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
