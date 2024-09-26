@@ -26,7 +26,13 @@ namespace NorthenLightHospital_LA_JC
         frmConnexion connex;
         NLH_Entities hospitalDB;
         List<Province> provinceList;
-        
+
+        private List<Admission> listAdmission;
+        private List<Patient> listPatient;
+
+        private Admission tableAdmin;
+        private Patient tablePatient;
+
 
         public frmPrepose(frmConnexion con,Utilisateur clerk)
         {
@@ -37,13 +43,20 @@ namespace NorthenLightHospital_LA_JC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //INIT DB
+            hospitalDB = new NLH_Entities();
+
+            //INIT LISTS
+            listAdmission = hospitalDB.Admission.ToList();
+            listPatient = hospitalDB.Patient.ToList();
+
+
             //GROUPBOXES DISABLED
             groupNewPatient.IsEnabled = false;
             gridSearchPatient.IsEnabled = false;
             groupAdmission.IsEnabled = false;
 
-            //INIT DB
-            hospitalDB = new NLH_Entities();
+            
 
             //INIT LISTPROVINCE
             initProvince();
@@ -54,7 +67,6 @@ namespace NorthenLightHospital_LA_JC
             cboIDMed.DataContext = hospitalDB.Medecin.ToList();
 
             cboTypeChambre.DataContext = hospitalDB.TypeLit.ToList();
-            //call method that updates the type of Rooms
             displayAvailableRooms();
 
 
@@ -104,19 +116,19 @@ namespace NorthenLightHospital_LA_JC
         private void initProvince()
         {
             provinceList = new List<Province>();
-            provinceList.Add(new Province("Alberta"));
-            provinceList.Add(new Province("British Columbia"));
-            provinceList.Add(new Province("Manitoba"));
-            provinceList.Add(new Province("New Brunswick"));
-            provinceList.Add(new Province("Newfoundland and Labrador"));
-            provinceList.Add(new Province("Nova Scotia"));
-            provinceList.Add(new Province("Ontario"));
-            provinceList.Add(new Province("Prince Edward Island"));
-            provinceList.Add(new Province("Quebec"));
-            provinceList.Add(new Province("Saskatchewan"));
-            provinceList.Add(new Province("Northwest Territories"));
-            provinceList.Add(new Province("Nunavut"));
-            provinceList.Add(new Province("Yukon"));
+            provinceList.Add(new Province("AB"));
+            provinceList.Add(new Province("BC"));
+            provinceList.Add(new Province("MN"));
+            provinceList.Add(new Province("NB"));
+            provinceList.Add(new Province("NF"));
+            provinceList.Add(new Province("NS"));
+            provinceList.Add(new Province("ON"));
+            provinceList.Add(new Province("PEI"));
+            provinceList.Add(new Province("QC"));
+            provinceList.Add(new Province("SK"));
+            provinceList.Add(new Province("NWT"));
+            provinceList.Add(new Province("NVT"));
+            provinceList.Add(new Province("YK"));
         }
     
         public class Province
@@ -138,7 +150,7 @@ namespace NorthenLightHospital_LA_JC
         private void btn_annuler_Click(object sender, RoutedEventArgs e)
         {
             txtSearch.Text = string.Empty;
-
+            lblIDAdmin.Content = string.Empty;
             txtNSS.Text = string.Empty;
             txtNom.Text = string.Empty;
             txtPrenom.Text = string.Empty;
@@ -163,8 +175,7 @@ namespace NorthenLightHospital_LA_JC
             checkTV.IsChecked = false;
             checkPhone.IsChecked = false;
 
-            yesOperation.IsChecked = false;
-            nonOperation.IsChecked = false;
+            nonOperation.IsChecked = true ;
         }
 
         private void yesOperation_Checked(object sender, RoutedEventArgs e)
@@ -192,39 +203,104 @@ namespace NorthenLightHospital_LA_JC
 
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
-            Patient foundPatient = new Patient();
-            //Admission foundAdmission = new Admission();
-            //foundAdmission.Patient = foundPatient;
-            var sqlAdmin = hospitalDB.Database.SqlQuery<string>("select admin.IDAdmission\r\nfrom Admission admin, Patient patient\r\nwhere admin.NSS = patient.NSS");
+            rechercheADmission();
+            recherchePatient();
+        }
 
+        private void rechercheADmission()
+        {
+            bool foundAdmission = false;
 
-            //its own method to call
-            foreach (Patient patient in hospitalDB.Patient)
+            //LA RECHERCHE DE L'ADMISSION EN QUESTION
+            foreach (Admission admission in listAdmission)
             {
-                if (patient.NSS.Equals(txtSearch.Text))
+                if (admission.NSS.Equals(txtSearch.Text))
                 {
-                    foundPatient = patient;
-                    txtNSS.Text = foundPatient.NSS;
-                    txtNom.Text = foundPatient.Nom;
-                    txtPrenom.Text = foundPatient.Prenom;
-                    dateNaiss.SelectedDate = foundPatient.DateNaissance;
-                    txtAddre.Text = foundPatient.Adresse;
-                    txtCodeP.Text = foundPatient.CodePostal;
-                    txtVille.Text = foundPatient.Ville;
-                    cboProvince.Text = foundPatient.Province;
-                    cboAssurance.SelectedItem = foundPatient.Assurance;
+                    //GROUP ADMISSION
+                    lblIDAdmin.Content = admission.IDAdmission;
+                    dpDateAdmin.SelectedDate = admission.DateAdmission;
+                    dpDateConge.SelectedDate = admission.DateDuConge;
+                    cboIDMed.SelectedItem = admission.IDMedecin;
+                    cboTypeChambre.SelectedItem = admission.Lit;
+                    cboNumLit.SelectedItem = admission.NumeroLit;
+                    if (admission.Telephone == true)
+                    {
+                        checkPhone.IsChecked = true;
+                    }
+                    if (admission.Televiseur == true)
+                    {
+                        checkTV.IsChecked = true;
+                    }
 
-                    txtTelephone.Text = foundPatient.Telephone;
-                    // txtUrgence.Text = this is a problem
+
+                    //GROUPD CHIRURGIE
+                    if (admission.ChirurgieProgramme == true)
+                    {
+                        dpDateChirurgie.SelectedDate = admission.DateChirurgie;
+                        yesOperation.IsChecked = true;
+                    }
+                    foundAdmission = true;
                     break;
                 }
             }
-            
+            if (!foundAdmission)
+            {
+                MessageBox.Show("Erreur, Admission non-trouve");
+                lblIDAdmin.Content = string.Empty;
+                dpDateAdmin.SelectedDate = null;
+                dpDateConge.SelectedDate = null;
+                cboIDMed.SelectedItem = null;
+                cboTypeChambre.SelectedItem = null;
+                cboNumLit.SelectedItem = null;
+                checkPhone.IsChecked = null;
+                checkTV.IsChecked = null;
+                yesOperation = null;
+                nonOperation = null;
+                dpDateChirurgie.SelectedDate = null;
 
-            //Show Admission here
-            //{
-            //}
-            
+            }
+        }
+
+        private void recherchePatient()
+        {
+            bool foundPatient = false;
+
+            //DISPLAY DU PATIENT EN QUESTION
+            foreach (Patient patient in listPatient)
+            {
+                if (patient.NSS.Equals(txtSearch.Text))
+                {
+                    //GROUP PATIENT
+                    txtNSS.Text = patient.NSS;
+                    txtNom.Text = patient.Nom;
+                    txtPrenom.Text = patient.Prenom;
+                    dateNaiss.SelectedDate = patient.DateNaissance;
+                    txtAddre.Text = patient.Adresse;
+                    txtCodeP.Text = patient.CodePostal;
+                    txtVille.Text = patient.Ville;
+                    cboProvince.SelectedItem = this.provinceList.FirstOrDefault(p => p.Nom == patient.Province.ToString());
+                    //cboAssurance.SelectedItem = hospitalDB.Assurance.Where(p => p.)
+                    txtTelephone.Text = patient.Telephone;
+                    // txtUrgence.Text = this is a problem
+                    foundPatient = true;
+                    break;
+                }
+                
+            }
+            if (!foundPatient)
+            {
+                MessageBox.Show("Erreur, Patient non-trouve");
+                txtNSS.Text = "";
+                txtNom.Text = "";
+                txtPrenom.Text = "";
+                dateNaiss.SelectedDate = null;
+                txtAddre.Text = "";
+                txtCodeP.Text = "";
+                txtVille.Text = "";
+                cboProvince.Text = null;
+                cboAssurance.SelectedItem = null;
+                txtTelephone.Text = "";
+            }
         }
     }
 }
