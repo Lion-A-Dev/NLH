@@ -116,21 +116,18 @@ namespace NorthenLightHospital_LA_JC
 
                 }
 
-                //try
-                //{
-                //    // Enregistrement dans la base de données.
-                //    hospitalDB.SaveChanges();
-                //    MessageBox.Show("Admission validé.", "VALIDATION", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                //}
-                //catch (Exception ex)
-                //{
-                //    // Récupération de l'erreur retournée par SQL Server.
-                //    MessageBox.Show(ex.ToString(),
-                //        "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                //}
-
- 
-
+                try
+                {
+                    // Enregistrement dans la base de données.
+                    hospitalDB.SaveChanges();
+                    MessageBox.Show("Admission validé.", "VALIDATION", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+                catch (Exception ex)
+                {
+                    // Récupération de l'erreur retournée par SQL Server.
+                    MessageBox.Show(ex.ToString(),
+                        "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             
         }

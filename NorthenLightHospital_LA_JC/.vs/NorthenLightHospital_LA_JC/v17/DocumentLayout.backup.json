@@ -3,15 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Lion\\source\\repos\\pulledProjects\\NorthenLightHospital_LA_JC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_1NJ21BG/NLH/True/SqlTable/dbo.Assurance.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{418D1305-33FD-4581-81E5-76D34A7DE119}|NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC.csproj|c:\\users\\lion\\source\\repos\\pulledprojects\\northenlighthospital_la_jc\\northenlighthospital_la_jc\\frmprepose.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{418D1305-33FD-4581-81E5-76D34A7DE119}|NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC.csproj|solutionrelative:northenlighthospital_la_jc\\frmprepose.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{418D1305-33FD-4581-81E5-76D34A7DE119}|NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC.csproj|C:\\Users\\Lion\\source\\repos\\pulledProjects\\NorthenLightHospital_LA_JC\\northenlighthospital_la_jc\\frmprepose.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{418D1305-33FD-4581-81E5-76D34A7DE119}|NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC.csproj|solutionrelative:northenlighthospital_la_jc\\frmprepose.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418D1305-33FD-4581-81E5-76D34A7DE119}|NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC.csproj|C:\\Users\\Lion\\source\\repos\\pulledProjects\\NorthenLightHospital_LA_JC\\northenlighthospital_la_jc\\frmprepose.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418D1305-33FD-4581-81E5-76D34A7DE119}|NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC.csproj|solutionrelative:northenlighthospital_la_jc\\frmprepose.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_1NJ21BG/NLH/True/SqlTable/dbo.Departement.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -29,16 +26,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbo.Assurance [Donn\u00E9es]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_1NJ21BG/NLH/True/SqlTable/dbo.Assurance.sql",
-              "ToolTip": "dbo.Assurance [Donn\u00E9es]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-29T15:18:20.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "frmPrepose.xaml",
               "DocumentMoniker": "C:\\Users\\Lion\\source\\repos\\pulledProjects\\NorthenLightHospital_LA_JC\\NorthenLightHospital_LA_JC\\frmPrepose.xaml",
               "RelativeDocumentMoniker": "NorthenLightHospital_LA_JC\\frmPrepose.xaml",
@@ -58,18 +45,16 @@
               "RelativeToolTip": "NorthenLightHospital_LA_JC\\frmPrepose.xaml.cs",
               "ViewState": "AgIAAMMBAAAAAAAAAAAwwOIBAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T23:06:25.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-21T23:06:25.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.Departement [Donn\u00E9es]",
+              "DocumentIndex": 2,
+              "Title": "dbo.Departement.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_1NJ21BG/NLH/True/SqlTable/dbo.Departement.sql",
-              "ToolTip": "dbo.Departement [Donn\u00E9es]",
+              "ToolTip": "ViewDataWindow_MSSQL__/DESKTOP_1NJ21BG/NLH/True/SqlTable/dbo.Departement.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-29T14:06:38.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-29T14:06:38.239Z"
             }
           ]
         }
