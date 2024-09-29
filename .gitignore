@@ -1,2 +1,17 @@
 # Ignorer le dossier .vs
 .vs/
+
+# Ignorer les fichiers compilés
+*.exe
+*.dll
+
+# Ignorer les dossiers bin et obj
+bin/
+obj/
+
+# Ignorer les fichiers de configuration spécifiques à l'environnement
+*.config
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.log
