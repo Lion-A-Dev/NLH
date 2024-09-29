@@ -25,7 +25,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <RadioButton x:Name="newPatient" Content="Nouveau Patient" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="22,0,0,0" IsChecked="False" Checked="newPatient_Checked"/>
+                <RadioButton x:Name="newPatient" Content="Nouvelle Admission" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="22,0,0,0" IsChecked="False" Checked="newPatient_Checked"/>
                 <RadioButton x:Name="findPatient" Grid.Row="1" Content="Recherche d'un Patient" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="22,0,0,0" Checked="findPatient_Checked"></RadioButton>
             </Grid>
         </GroupBox>
@@ -33,12 +33,12 @@
 
         <Grid x:Name="gridSearchPatient" Height="85"  VerticalAlignment="Center" HorizontalAlignment="Left"  Width="361" Margin="23,0,0,0" Grid.Column="1">
             <TextBlock Text="Recherche du Patient"  VerticalAlignment="Top" Width="auto" HorizontalAlignment="Left"  FontSize="21" Margin="10,13,0,0"  />
-            <TextBox x:Name="txtSearch"  Text="" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Height="30" Width="255" Margin="10,46,0,0"></TextBox>
+            <TextBox x:Name="txtSearch" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Height="30" Width="255" Margin="10,46,0,0"></TextBox>
             <Button x:Name="btn_search" Height="30" Width="75" Background="#66CDAA" Foreground="White" Content="GO" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,10,0" Click="btn_search_Click"></Button>
         </Grid>
 
         <GroupBox x:Name="groupNewPatient" Padding="10" Grid.Row="1" Grid.Column="0" Header="Information Patient" FontSize="16" Margin="10,0,0,30">
-            <Grid>
+            <Grid x:Name="gridNouveauPatient">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -79,10 +79,10 @@
                 <TextBox x:Name="txtCodeP" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" Width="150" Height="20"></TextBox>
                 <ComboBox x:Name="cboProvince" ItemsSource="{Binding}" DisplayMemberPath="Nom" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="7" Width="150" Height="20"></ComboBox>
                 <TextBox x:Name="txtTelephone" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" Width="150" Height="20"></TextBox>
-                <ComboBox x:Name="cboAssurance" ItemsSource="{Binding}" SelectedItem="{Binding Path=SelectedItem.NomCompagnie}" DisplayMemberPath="NomCompagnie"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="9" Width="150" Height="20"></ComboBox>
+                <ComboBox x:Name="cboAssurance" ItemsSource="{Binding}" DisplayMemberPath="NomCompagnie"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="9" Width="150" Height="20" SelectionChanged="cboAssurance_SelectionChanged"></ComboBox>
                 <TextBox x:Name="txtUrgence" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="10" Width="150" Height="20"></TextBox>
 
-                <Button x:Name="btn_ajouter" Content="Ajouter" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Background='MediumAquamarine' Width="150" Height="30" Grid.Row="11"></Button>
+                <Button x:Name="btn_ajouter" Content="Ajouter" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Background='MediumAquamarine' Width="150" Height="30" Grid.Row="11" Click="btn_ajouter_Click"></Button>
                 <Button x:Name="btn_annuler" Grid.Row="11" Content="Annuler" Grid.Column="0" Height="30" Width="150" VerticalAlignment="Center" Background="#66CDAA" Foreground="White" Click="btn_annuler_Click"></Button>
 
             </Grid>
@@ -91,19 +91,19 @@
 
 
         <GroupBox x:Name="groupAdmission" Grid.Column="1" Grid.Row="1" Header="Admission" FontSize="16" Margin="15,0,15,30">
-            <Grid>
+            <Grid x:Name="gridAdmission">
                 <TextBlock Text="Id de l'admission" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,31,0,0"></TextBlock>
                 <TextBlock Text="Date de l'admission" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,59,0,0"></TextBlock>
                 <TextBlock Text="Date de Conge" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,92,0,0"></TextBlock>
                 <TextBlock Text="Medecin" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,122,0,0" Width="82" ></TextBlock>
 
-                <Label x:Name="lblIDAdmin" Content="t" IsEnabled="False" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,26,76,0"></Label>
+                <Label x:Name="lblIDAdmin" Content="" IsEnabled="False" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,26,76,0"></Label>
                 <DatePicker x:Name="dpDateAdmin" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,59,67,0"></DatePicker>
                 <DatePicker x:Name="dpDateConge" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,92,67,0"></DatePicker>
-                <ComboBox x:Name="cboIDMed" ItemsSource="{Binding}" DisplayMemberPath="Nom" Height="20" Width="188" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,122,67,0"></ComboBox>
+                <ComboBox x:Name="cboIDMed" DisplayMemberPath="Nom" Height="20" Width="188" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,122,67,0"></ComboBox>
 
                 <GroupBox Header="Chambre" FontSize="16" Height="137" VerticalAlignment="Center" Margin="13,0,24,0">
-                    <Grid>
+                    <Grid x:Name="gridChambre">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -123,8 +123,8 @@
 
                         <CheckBox x:Name="checkTV" Content="Televiseur" FontSize="14" Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="90"></CheckBox>
                         <CheckBox x:Name="checkPhone" Content="Telephone" FontSize="14"  Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,9,13,0"></CheckBox>
-                        <ComboBox x:Name="cboTypeChambre" ItemsSource="{Binding}" SelectedItem="{Binding Path=ListDesc}" DisplayMemberPath="LitDesc" Width="150" Height="20" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" />
-                        <ComboBox x:Name="cboNumLit" Width="150" ItemsSource="{Binding}" DisplayMemberPath="NumeroLit"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="20" ></ComboBox>
+                        <ComboBox x:Name="cboTypeChambre" DisplayMemberPath="LitDesc" Width="150" Height="20" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" SelectionChanged="cboTypeChambre_SelectionChanged" />
+                        <ComboBox x:Name="cboNumLit" Width="150" DisplayMemberPath="NumeroLit"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="20" ></ComboBox>
                     </Grid>
                 </GroupBox>
 

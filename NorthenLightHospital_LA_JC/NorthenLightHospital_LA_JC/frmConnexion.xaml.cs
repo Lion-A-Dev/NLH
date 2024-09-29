@@ -57,14 +57,23 @@ namespace NorthenLightHospital_LA_JC
         {
             foreach(UIElement element in gridCon.Children)
             {
-                if (element is TextBox)
+                if (element is TextBox txt)
                 {
-                    if (element == null)
+                    if (string.IsNullOrEmpty(txt.Text))
                     {
-                        MessageBox.Show("Erreu, vous devez remplir tout les champs", "Erreur", MessageBoxButton.OK);
+                        MessageBox.Show("Erreu, vous devez entrez un nom Utilisateur", "Erreur", MessageBoxButton.OK);
                         return;
                     }
                 }
+                else if(element is PasswordBox pbox)
+                {
+                    if (string.IsNullOrEmpty(pbox.Password))
+                    {
+                        MessageBox.Show("Erreu, vous devez entrez un mot de passe", "Erreur", MessageBoxButton.OK);
+                        return;
+                    }
+                }
+
                     
             }
         }
@@ -79,7 +88,7 @@ namespace NorthenLightHospital_LA_JC
                 if (username.Text.ToLower().Equals(users.Username) && password.Password.Equals(users.Password))
                 {
                     found = true;
-                    MessageBox.Show("Bienvenue " +  " " + users.Username,"Bienvenue",MessageBoxButton.OK,MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenue " +  " " + users.Username,"Bienvenue",MessageBoxButton.OK);
                     titre = users.Titre;
                     currentUser = users;
                     break;
@@ -107,13 +116,12 @@ namespace NorthenLightHospital_LA_JC
                     this.Hide();
                     frmPrepose.Show();
                 }
-                else
-                {
-                    MessageBox.Show("Erreur, utilisateur entre n'existe pas", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                }
             }
+            else
+            {
+                MessageBox.Show("Erreur, utilisateur entre n'existe pas", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
 
+            }
         }
     }
 }
