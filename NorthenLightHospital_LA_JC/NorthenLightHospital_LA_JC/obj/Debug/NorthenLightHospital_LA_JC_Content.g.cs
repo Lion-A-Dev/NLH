@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nlh.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nlh.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nhl.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("nhl.tt")]
 
 

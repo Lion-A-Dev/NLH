@@ -15,114 +15,112 @@ using System.Windows.Shapes;
 namespace NorthenLightHospital_LA_JC
 {
     /// <summary>
-    /// Logique d'interaction pour frmConnexion.xaml
+    /// AUTEUR:         Lion Arar
+    /// 
+    /// Mise à Jour:    YY/MM/DD par
+    ///                 24/09/23
+    ///                 24/09/28 par Jean Couturier
+    ///                 
+    /// Objectif: 
+    ///     Formulaire de connexion. Suivant le titre de l'utilisateur le form correspondant sera afficher
+    ///     quand le form afficher est fini d'utiliser le form de connexion se re-affiche pret 
+    ///     pour une nouvelle connexion.
     /// </summary>
     public partial class frmConnexion : Window
     {
-        List<Utilisateur> listeUtilisateur;
+        Gestion gestion = new Gestion();
+        User currentUser = new User();
+
         frmAdmin frmAdmin;
         frmMedecin frmMedecin;
         frmPrepose frmPrepose;
 
-        Utilisateur currentUser;
-
-        public  class Utilisateur
-        {
-            public string Username { get; set; }
-            public string Password { get; set; }
-            public string Titre { get; set; }
-        }
-
-
         public frmConnexion()
         {
             InitializeComponent();
+            username.Focus();
         }
 
+        /// <summary>
+        /// Procédure de mis a jour a la listeUtilisateur
+        /// Si un admin se connect et ajoute ou modifie un medecin
+        /// la liste sera automatique mis a jour grace au dbContext
+        /// </summary>
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            gestion.majListMedecin();
+        }
+
+        /// <summary>
+        /// Evenement qui gèere la validation des idantifiants saisis.
+        /// </summary>
         private void btnCo_Click(object sender, RoutedEventArgs e)
         {
-            validationEmpty();
-            validationUser();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            listeUtilisateur = new List<Utilisateur>();
-            listeUtilisateur.Add(new Utilisateur() { Username = "Jean".ToLower(), Password = "1234", Titre = "Admin" });
-            listeUtilisateur.Add(new Utilisateur() { Username = "Lion".ToLower(), Password = "9876", Titre = "Medecin" });
-            listeUtilisateur.Add(new Utilisateur() { Username = "Billie".ToLower(), Password = "1793", Titre = "Prepose" });
-        }
-
-        private void validationEmpty()
-        {
-            foreach(UIElement element in gridCon.Children)
-            {
-                if (element is TextBox txt)
-                {
-                    if (string.IsNullOrEmpty(txt.Text))
-                    {
-                        MessageBox.Show("Erreu, vous devez entrez un nom Utilisateur", "Erreur", MessageBoxButton.OK);
-                        return;
-                    }
-                }
-                else if(element is PasswordBox pbox)
-                {
-                    if (string.IsNullOrEmpty(pbox.Password))
-                    {
-                        MessageBox.Show("Erreu, vous devez entrez un mot de passe", "Erreur", MessageBoxButton.OK);
-                        return;
-                    }
-                }
-
-                    
+            if (validationEmpty()) {
+                currentUser = gestion.validationUser(username.Text.Trim().ToLower(), password.Password.ToString().ToLower().Trim());
+                ouvrirFormCorrespondant();
             }
         }
 
-        private void validationUser()
+        private bool validationEmpty()
         {
-            bool found = false;
-            string titre = "";
-
-            foreach (Utilisateur users in listeUtilisateur)
+            if (username.Text == "" || password.Password == "")
             {
-                if (username.Text.ToLower().Equals(users.Username) && password.Password.Equals(users.Password))
-                {
-                    found = true;
-                    MessageBox.Show("Bienvenue " +  " " + users.Username,"Bienvenue",MessageBoxButton.OK);
-                    titre = users.Titre;
-                    currentUser = users;
-                    break;
-                }
+                MessageBox.Show("Erreur, vous devez remplir tout les champs", "Erreur", MessageBoxButton.OK);
+                return false;
             }
-            if (found == true)
+            else
+                return true;
+        }
+
+        private void ouvrirFormCorrespondant()
+        {
+            if (currentUser != null)
             {
+                MessageBox.Show($"Bienvenu {currentUser.Username.ToUpper()} !", "Connexion Validé", MessageBoxButton.OK);
 
-                if (titre == "Medecin")
+                if (currentUser.Titre == "Medecin")
                 {
-                    frmMedecin = new frmMedecin(currentUser);
+                    frmMedecin = new frmMedecin(currentUser, gestion);
                     this.Hide();
-                    frmMedecin.Show();
+                    frmMedecin.ShowDialog();
+                    this.Show();
 
                 }
-                else if (titre == "Admin")
+                else if (currentUser.Titre == "Admin")
                 {
-                    frmAdmin = new frmAdmin(currentUser);
+                    frmAdmin = new frmAdmin();
                     this.Hide();
-                    frmAdmin.Show();
+                    frmAdmin.ShowDialog();
+                    this.Show();
                 }
-                else if (titre == "Prepose")
+                else if (currentUser.Titre == "Prepose")
                 {
-                    frmPrepose = new frmPrepose(this, currentUser);
+                    frmPrepose = new frmPrepose();
                     this.Hide();
-                    frmPrepose.Show();
+                    frmPrepose.ShowDialog();
+                    this.Show();
                 }
+                clearBox();
             }
             else
             {
-                MessageBox.Show("Erreur, utilisateur entre n'existe pas", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                MessageBox.Show("Erreur, utilisateur entré n'existe pas", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                clearBox();
             }
+        }
+
+        private void clearBox()
+        {
+            username.Text = null;
+            password.Password = null;
+            username.Focus();
+        }
+
+
+        private void btnQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
-

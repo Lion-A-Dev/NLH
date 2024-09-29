@@ -13,6 +13,7 @@ C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital
 C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.csproj.CoreCompileInputs.cache
 C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.exe
 C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.pdb
+<<<<<<< HEAD
 C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\NorthenLightHospital_LA_JC.exe.config
 C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\NorthenLightHospital_LA_JC.exe
 C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\NorthenLightHospital_LA_JC.pdb
@@ -41,3 +42,18 @@ C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLigh
 C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenL.F962A365.Up2Date
 C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.exe
 C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC.pdb
+=======
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\EntityFramework.dll
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\EntityFramework.xml
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmAdmin.g.cs
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmMedecin.g.cs
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmPrepose.g.cs
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenLightHospital_LA_JC_Content.g.cs
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmAdmin.baml
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmMedecin.baml
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\frmPrepose.baml
+C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\obj\Debug\NorthenL.F962A365.Up2Date
+>>>>>>> d15187b (commit avant Merge avec Main)

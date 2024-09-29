@@ -1,4 +1,5 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\Lion\source\repos\pulledProjects\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\NLH.edmx'. 
+
+﻿// La génération de code T4 est activée pour le modèle 'C:\Users\JGSC\Documents\Projet Visual Studio\Projet LA_JC Northen Light Hospital\NorthenLightHospital_LA_JC\NorthenLightHospital_LA_JC\NHL.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.
