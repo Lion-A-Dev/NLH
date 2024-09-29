@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthenLightHospital_LA_JC"
         mc:Ignorable="d"
-        Title="Connexion" Height="400" Width="300" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Connexion" Height="400" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+            Activated="Window_Activated">
 
     <Grid x:Name="gridCon">
         <TextBlock HorizontalAlignment="Center" Margin="0,39,0,0" TextWrapping="Wrap" Text="Login" FontSize="26" VerticalAlignment="Top"/>
         <TextBox x:Name="username" Height="20" Width="150" HorizontalAlignment="Center" Margin="0,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <PasswordBox x:Name="password" Height="20" Width="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,181,0,0"/>
-        <Button x:Name="btnCo"  Background="#66CDAA" Foreground="White" Height="20" Width="150" Content="Connection" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Click="btnCo_Click"/>
+        <Button x:Name="btnCo"  Background="#66CDAA" Foreground="White" Height="20" Width="150" Content="Connection" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" 
+                Click="btnCo_Click" IsDefault="True"/>
+        <Button x:Name="btnQuitter"  Background="#66CDAA" Foreground="White" Height="20" Width="150" Content="Quitter" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" 
+            Click="btnQuitter_Click" IsCancel="True"/>
     </Grid>
+    <!-- Allo -->
 </Window>

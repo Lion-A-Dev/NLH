@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="NLHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="NLH_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Admission">
     <Key>
       <PropertyRef Name="IDAdmission" />
@@ -61,19 +61,6 @@
     <Property Name="Telephone" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="IDAssurance" Type="int" />
   </EntityType>
-<<<<<<< HEAD
-=======
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
->>>>>>> d15187b (commit avant Merge avec Main)
   <EntityType Name="TypeLit">
     <Key>
       <PropertyRef Name="IDType" />
@@ -153,17 +140,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="NLHModelStoreContainer">
+  <EntityContainer Name="NLH_ModelStoreContainer">
     <EntitySet Name="Admission" EntityType="Self.Admission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Assurance" EntityType="Self.Assurance" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departement" EntityType="Self.Departement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Lit" EntityType="Self.Lit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Medecin" EntityType="Self.Medecin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
-<<<<<<< HEAD
-=======
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
->>>>>>> d15187b (commit avant Merge avec Main)
     <EntitySet Name="TypeLit" EntityType="Self.TypeLit" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Admission__IDMed__47DBAE45" Association="Self.FK__Admission__IDMed__47DBAE45">
       <End Role="Medecin" EntitySet="Medecin" />

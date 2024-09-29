@@ -4,56 +4,70 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthenLightHospital_LA_JC"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Médecin" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Menu Médecin" Height="450" Width="650" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <!--
+         AUTEUR:         Jean COUTURIER
+ 
+         Mise à Jour:    YY/MM/DD par
+                         24/09/28 par Jean
+    -->
     <Grid>
-        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="630*"/>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Attribution de congés" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" FontFamily="Tw Cen MT" Margin="0,6,0,0"/>
+        <Button x:Name="btnRetourMenu" Grid.Column="1" Content="RETOUR" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Width="110" Height="40"
+            FontSize="24" FontFamily="Tw Cen MT" Background="MediumAquamarine" Margin="0,5,5,0" Click="btnRetourMenu_Click" BorderThickness="1,1,1,1" IsCancel="True"/>
+
+        <Button x:Name="btnAjouterCong" Content="VALIDER" Width="130" Height="50" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+            FontFamily="Tw Cen MT" FontSize="24" Background="MediumAquamarine" HorizontalContentAlignment="Center" Margin="0,0,0,10" Click="btnAjouterCong_Click" IsDefault="True" />
+
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="460" Height="320" Background="#9966CDAA"
+            DataContext="{Binding ElementName=cbPatient, Mode=OneWay, Path=SelectedItem}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
             </Grid.ColumnDefinitions>
 
-            <ListBox Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" Grid.RowSpan="2" />
+            <Label Content="Liste de vos patient(s)" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35" FontWeight="Bold"/>
+            <ComboBox x:Name="cbPatient" Grid.Row="0" Grid.Column="2" Height="35" FontFamily="Tw Cen MT" FontSize="20" DisplayMemberPath="NSS" SelectionChanged="cbPatient_SelectionChanged"/>
 
-            <TabControl Grid.Row="0" Grid.Column="1" Margin="10,10,10,10" Grid.RowSpan="2">
-                <TabItem Background="#66CDAA" Foreground="Black" Header="Information Patient">
-                    <Grid Background="#FFE5E5E5">
-                        <DataGrid x:Name="dgPatient" AutoGenerateColumns="False">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="NSS" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Nom" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Prenom" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Adresse" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Telephone" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Id Assurance" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Status" IsReadOnly="True"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </Grid>
-                </TabItem>
-                <TabItem Background="#66CDAA" Foreground="Black" Header="Prescriptions">
-                    <Grid Background="#FFE5E5E5">
-                        <DataGrid x:Name="dgPrescriptions" AutoGenerateColumns="False">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Dug" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Nom" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Dose" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Fournisseur" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Date de Debut" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Date de Fin" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Notes" IsReadOnly="False"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </Grid>
-                </TabItem>
-            </TabControl>
+            <Label Content="Patient" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35" FontWeight="Bold"/>
+            <Label x:Name="lblNomPat" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35"/>
 
-            <Button Background="#66CDAA" Foreground="White" Content="Conge" Grid.Row="0" Grid.Column="2" Height="30" Width="100" Margin="10" />
+            <Label Content="Numéro d'admission" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35" FontWeight="Bold"/>
+            <Label x:Name="lblNumAdmis" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35"
+                Content="{Binding IDAdmission}"/>
+
+            <Label Content="Date d'admission" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35" FontWeight="Bold"/>
+            <Label x:Name="lblDateAdmis" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35"
+                Content="{Binding DateAdmission}"/>
+
+            <Label Content="Chirurgie prévu" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35" FontWeight="Bold"/>
+            <Label x:Name="lblOperation" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35"/>
+
+            <Label Content="Congé" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Tw Cen MT" Height="35" FontWeight="Bold"/>
+            <DatePicker x:Name="dpCongé" Grid.Row="5" Grid.Column="2" Height="35" FontFamily="Tw Cen MT" FontSize="20" Background="#9966CDAA" Padding="0,4,0,0"
+                    DisplayDateStart="{Binding DateAdmission}" DisplayDateEnd="{x:Static sys:DateTime.Now}"/>
         </Grid>
     </Grid>
 </Window>

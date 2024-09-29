@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="NLHModelStoreContainer" CdmEntityContainer="NLH_Entities">
+  <EntityContainerMapping StorageEntityContainer="NLH_ModelStoreContainer" CdmEntityContainer="NLH_Entities">
     <EntitySetMapping Name="Admission">
-      <EntityTypeMapping TypeName="NLHModel.Admission">
+      <EntityTypeMapping TypeName="NLH_Model.Admission">
         <MappingFragment StoreEntitySet="Admission">
           <ScalarProperty Name="IDAdmission" ColumnName="IDAdmission" />
           <ScalarProperty Name="ChirurgieProgramme" ColumnName="ChirurgieProgramme" />
@@ -18,7 +18,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Assurance">
-      <EntityTypeMapping TypeName="NLHModel.Assurance">
+      <EntityTypeMapping TypeName="NLH_Model.Assurance">
         <MappingFragment StoreEntitySet="Assurance">
           <ScalarProperty Name="IDAssurance" ColumnName="IDAssurance" />
           <ScalarProperty Name="NomCompagnie" ColumnName="NomCompagnie" />
@@ -26,7 +26,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Departement">
-      <EntityTypeMapping TypeName="NLHModel.Departement">
+      <EntityTypeMapping TypeName="NLH_Model.Departement">
         <MappingFragment StoreEntitySet="Departement">
           <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
           <ScalarProperty Name="NomDepartement" ColumnName="NomDepartement" />
@@ -34,7 +34,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Lit">
-      <EntityTypeMapping TypeName="NLHModel.Lit">
+      <EntityTypeMapping TypeName="NLH_Model.Lit">
         <MappingFragment StoreEntitySet="Lit">
           <ScalarProperty Name="NumeroLit" ColumnName="NumeroLit" />
           <ScalarProperty Name="Occupe" ColumnName="Occupe" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Medecin">
-      <EntityTypeMapping TypeName="NLHModel.Medecin">
+      <EntityTypeMapping TypeName="NLH_Model.Medecin">
         <MappingFragment StoreEntitySet="Medecin">
           <ScalarProperty Name="IDMedecin" ColumnName="IDMedecin" />
           <ScalarProperty Name="Nom" ColumnName="Nom" />
@@ -53,7 +53,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Patient">
-      <EntityTypeMapping TypeName="NLHModel.Patient">
+      <EntityTypeMapping TypeName="NLH_Model.Patient">
         <MappingFragment StoreEntitySet="Patient">
           <ScalarProperty Name="NSS" ColumnName="NSS" />
           <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
@@ -69,26 +69,12 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TypeLit">
-      <EntityTypeMapping TypeName="NLHModel.TypeLit">
+      <EntityTypeMapping TypeName="NLH_Model.TypeLit">
         <MappingFragment StoreEntitySet="TypeLit">
           <ScalarProperty Name="IDType" ColumnName="IDType" />
           <ScalarProperty Name="LitDesc" ColumnName="LitDesc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-<<<<<<< HEAD
-=======
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="NLHModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
->>>>>>> d15187b (commit avant Merge avec Main)
   </EntityContainerMapping>
 </Mapping>

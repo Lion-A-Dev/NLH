@@ -23,7 +23,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -65,35 +65,37 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Admission.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Assurance.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
     <Compile Include="Departement.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Gestion.cs" />
     <Compile Include="Lit.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
     <Compile Include="Medecin.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
-    <Compile Include="NLH.cs">
+    <Compile Include="NHL.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
     <Compile Include="TypeLit.cs">
-      <DependentUpon>NLH.tt</DependentUpon>
+      <DependentUpon>NHL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmAdmin.xaml.cs">
@@ -108,15 +110,15 @@
     <Compile Include="frmPrepose.xaml.cs">
       <DependentUpon>frmPrepose.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NLH.Context.cs">
+    <Compile Include="NHL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLH.Context.tt</DependentUpon>
+      <DependentUpon>NHL.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="NLH.Designer.cs">
+    <Compile Include="NHL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLH.edmx</DependentUpon>
+      <DependentUpon>NHL.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -135,12 +137,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="NLH.edmx">
+    <EntityDeploy Include="NHL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NLH.Designer.cs</LastGenOutput>
+      <LastGenOutput>NHL.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="NLH.edmx.diagram">
-      <DependentUpon>NLH.edmx</DependentUpon>
+    <None Include="NHL.edmx.diagram">
+      <DependentUpon>NHL.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -170,19 +172,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NLH.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NLH.Context.cs</LastGenOutput>
-      <DependentUpon>NLH.edmx</DependentUpon>
-    </Content>
-    <Content Include="NLH.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NLH.edmx</DependentUpon>
-      <LastGenOutput>NLH.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="NHL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NHL.edmx</DependentUpon>
+      <LastGenOutput>NHL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NHL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NHL.edmx</DependentUpon>
+      <LastGenOutput>NHL.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
