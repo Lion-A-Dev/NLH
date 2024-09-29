@@ -25,7 +25,7 @@ namespace NorthenLightHospital_LA_JC
     /// </summary>
     public partial class frmPrepose : Window
     {
-        Utilisateur prepose;
+        User prepose;
         frmConnexion connex;
         NLH_Entities hospitalDB;
         List<Province> provinceList;
@@ -42,11 +42,11 @@ namespace NorthenLightHospital_LA_JC
 
 
 
-        public frmPrepose(frmConnexion con,Utilisateur clerk)
+        public frmPrepose()
         {
             InitializeComponent();
-            connex = con;
-            prepose = clerk;
+            //connex = con;
+            //prepose = clerk;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
