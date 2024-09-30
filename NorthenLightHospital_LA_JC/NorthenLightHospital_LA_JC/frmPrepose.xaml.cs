@@ -21,7 +21,16 @@ using static NorthenLightHospital_LA_JC.frmConnexion;
 namespace NorthenLightHospital_LA_JC
 {
     /// <summary>
-    /// Logique d'interaction pour frmPrepose.xaml
+    /// AUTEUR:         Lion Arar
+    /// 
+    /// Mise à Jour:    YY/MM/DD par
+    ///                 24/09/24
+    ///                 
+    /// Objectif: 
+    ///     Formulaire qui permet la recherche d'un patient.
+    ///     si il existe dans la db on peu créer une nouvelle admission
+    ///     sans remplir toute les info du patient
+    ///     sinon il faut remplir les deux formulaires.
     /// </summary>
     public partial class frmPrepose : Window
     {
@@ -45,8 +54,6 @@ namespace NorthenLightHospital_LA_JC
         public frmPrepose()
         {
             InitializeComponent();
-            //connex = con;
-            //prepose = clerk;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

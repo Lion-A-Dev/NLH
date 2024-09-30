@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthenLightHospital_LA_JC"
         mc:Ignorable="d"
-        Title="Admission" Height="650" Width="950" WindowStartupLocation="CenterScreen" FontFamily="Tw Cen MT" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="Admission" Height="650" Width="950" WindowStartupLocation="CenterScreen" FontFamily="Tw Cen MT" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="NoResize">
     <Grid x:Name="gridPrepose">
         <Grid.RowDefinitions>
             <RowDefinition Height="93*"/>
@@ -34,7 +34,7 @@
         <Grid x:Name="gridSearchPatient" Height="85"  VerticalAlignment="Center" HorizontalAlignment="Left"  Width="361" Margin="23,0,0,0" Grid.Column="1">
             <TextBlock Text="Recherche du Patient"  VerticalAlignment="Top" Width="auto" HorizontalAlignment="Left"  FontSize="21" Margin="10,13,0,0"  />
             <TextBox x:Name="txtSearch" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Height="30" Width="255" Margin="10,46,0,0"></TextBox>
-            <Button x:Name="btn_search" Height="30" Width="75" Background="#66CDAA" Foreground="White" Content="GO" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,10,0" Click="btn_search_Click"></Button>
+            <Button x:Name="btn_search" Height="30" Width="75" Background="#66CDAA" Foreground="White" Content="GO" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,10,0" Click="btn_search_Click" IsDefault="True"></Button>
         </Grid>
 
         <GroupBox x:Name="groupNewPatient" Padding="10" Grid.Row="1" Grid.Column="0" Header="Information Patient" FontSize="16" Margin="10,0,0,30">
@@ -141,7 +141,7 @@
 
 
 
-        <Button x:Name="quit" Content="Quitter" Grid.Column="1" Height="30" VerticalAlignment="Center" Background="#66CDAA" Foreground="White" Grid.ColumnSpan="2" Margin="456,0,19,0" Click="quit_Click"/>
+        <Button x:Name="quit" Content="Quitter" Grid.Column="1" Height="30" VerticalAlignment="Center" Background="#66CDAA" Foreground="White" Grid.ColumnSpan="2" Margin="456,0,19,0" Click="quit_Click" IsCancel="True"/>
 
     </Grid>
 </Window>
